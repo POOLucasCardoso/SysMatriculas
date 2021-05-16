@@ -1,4 +1,4 @@
-package matricularAlunosSys;
+package sys;
 
 public class SysPlanilha {
 

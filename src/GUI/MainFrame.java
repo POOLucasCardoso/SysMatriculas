@@ -1,4 +1,4 @@
-package matricularAlunosGUI;
+package GUI;
 
 import java.awt.EventQueue;
 
