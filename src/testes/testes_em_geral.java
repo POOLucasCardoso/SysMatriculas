@@ -1,5 +1,8 @@
 package testes;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -18,6 +21,15 @@ class testes_em_geral {
 		} catch (NotasNaoCadastradasException e) {
 			
 		}
+	}
+	
+	@Test
+	void testeDeGeracaoDeMatricula() {
+		Calendar c = Calendar.getInstance();
+		c.set(2013, Calendar.FEBRUARY, 28);
+		Date data = c.getTime();
+		sys.Aluno a = new sys.Aluno("Jão", data);
+		assertEquals("00000001", a.getMatricula());
 	}
 
 }
