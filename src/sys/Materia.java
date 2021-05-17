@@ -13,7 +13,7 @@ public class Materia {
 		}
 	}
 	
-	public void cadastrarNota(int unidade, double nota) {
+	public void cadastrarNota(double nota, int unidade) {
 		this.notas[unidade-1] = nota;
 	}
 	
@@ -34,6 +34,28 @@ public class Materia {
 	
 	public NomesMateria getNome() {
 		return this.nome;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Materia other = (Materia) obj;
+		if (nome != other.nome)
+			return false;
+		return true;
 	}
 
 }

@@ -27,6 +27,18 @@ public class Aluno {
 			this.materias.add(new Materia(Aluno.NUM_NOTAS, m));
 		}
 	}
+	
+	public void cadastrarNota(NomesMateria materia, double nota, int unidade) {
+		for(Materia m: this.materias) {
+			if(m.getNome().equals(materia)) {
+				m.cadastrarNota(nota, unidade);
+			}
+		}
+	}
+	
+	public LinkedList<Materia> exibirNotas(){
+		return this.materias;
+	}
 
 	public String getNome() {
 		return nome;
@@ -46,6 +58,35 @@ public class Aluno {
 
 	public String getMatricula() {
 		return matricula;
+	}
+	
+	public String toString() {
+		return "Aluno: "+this.nome+", Matrícula: "+this.matricula;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((matricula == null) ? 0 : matricula.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Aluno other = (Aluno) obj;
+		if (matricula == null) {
+			if (other.matricula != null)
+				return false;
+		} else if (!matricula.equals(other.matricula))
+			return false;
+		return true;
 	}
 
 }
