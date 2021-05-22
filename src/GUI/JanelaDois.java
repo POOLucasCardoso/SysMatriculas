@@ -10,8 +10,9 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionListener;
 
-public class JanelaDois extends JFrame {
+public class JanelaDois extends JFrame implements ActionListener{
 	private JTextField textField;
 
 	/**
@@ -56,5 +57,11 @@ public class JanelaDois extends JFrame {
 
 		setVisible(true);
 
+	}
+	@Override
+	public void actionPerfomed(ActionEvent arg0){
+		if(arg0.getSource()==this.btnNewButton){
+			dispose();
+		}else if (arg0.getSource()==this.btnNewButton_2)
 	}
 }

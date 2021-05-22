@@ -10,8 +10,9 @@ import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
 
-public class JanelaSeis extends JFrame {
+public class JanelaSeis extends JFrame implements ActionListener{
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -66,5 +67,13 @@ public class JanelaSeis extends JFrame {
 		
 		setVisible(true);
 		
+	}
+	@Override
+	public void actionPerfomed(ActionEvent arg0) {
+		if(arg0.getSource()==this.btnNewButton_1){
+			dispose();
+		}else if (arg0.getSource()==this.btnNewButton){
+			 
+		}
 	}
 }

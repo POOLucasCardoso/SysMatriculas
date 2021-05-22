@@ -12,8 +12,9 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JEditorPane;
 import java.awt.Color;
+import java.awt.event.ActionListener;
 
-public class JanelaTres extends JFrame {
+public class JanelaTres extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -92,5 +93,19 @@ public class JanelaTres extends JFrame {
 		
 		setVisible(true);
 		
+	}
+	@Override
+	public void actionPerfomed(ActionEvent arg0){
+		if(arg0.getSource()==this.btnNewButton){
+			dispose();
+		}else if (arg0.getSource()==this.btnNewButton_1){
+
+		}else if (arg0.getSource()==this.btnNewButton_2){
+
+		}else if (arg0.getSource()==this.btnNewButton_3){
+
+		}else if (arg0.getSource()==this.btnNewButton_4){
+			 
+		}
 	}
 }
