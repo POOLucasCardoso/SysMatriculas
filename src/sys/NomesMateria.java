@@ -14,7 +14,7 @@ public enum NomesMateria {
 		this.inString = nome;
 	}
 	
-	public String getInString() {
+	public String toString() {
 		return this.inString;
 	}
 	

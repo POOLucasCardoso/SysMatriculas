@@ -1,11 +1,11 @@
 package sys;
-import java.util.Date;
+
 import java.util.LinkedList;
 
 public class Aluno {
 	
-	public static final int NUM_NOTAS = 3;
-	private static int MATRICULA_COUNT = 1;
+	public static int NUM_NOTAS = 3;
+	public static int MATRICULA_COUNT = 1;
 	
 	private static String geradorDeMatricula() {
 		String matricula = String.format("%08d", Aluno.MATRICULA_COUNT);
@@ -16,13 +16,22 @@ public class Aluno {
 	
 	private String matricula;
 	private String nome;
-	private Date nascimento; //data de nascimento
+	private String nascimento; //data de nascimento: DD/MM/AAAA
 	private LinkedList<Materia> materias;
 	
-	public Aluno(String nome, Date nascimento) {
+	public Aluno(String nome, String nascimento) {
 		this.nome = nome;
 		this.nascimento = nascimento;
 		this.matricula = Aluno.geradorDeMatricula();
+		for(NomesMateria m: NomesMateria.values()) {
+			this.materias.add(new Materia(Aluno.NUM_NOTAS, m));
+		}
+	}
+	
+	public Aluno( String matricula, String nome, String nascimento) {
+		this.nome = nome;
+		this.nascimento = nascimento;
+		this.matricula = matricula;
 		for(NomesMateria m: NomesMateria.values()) {
 			this.materias.add(new Materia(Aluno.NUM_NOTAS, m));
 		}
@@ -48,11 +57,11 @@ public class Aluno {
 		this.nome = nome;
 	}
 
-	public Date getNascimento() {
+	public String getNascimento() {
 		return nascimento;
 	}
 
-	public void setNascimento(Date nascimento) {
+	public void setNascimento(String nascimento) {
 		this.nascimento = nascimento;
 	}
 
