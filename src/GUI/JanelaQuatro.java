@@ -10,10 +10,11 @@ import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionListener;
 
 public class JanelaQuatro extends JFrame implements ActionListener{
 	private JTextField textField;
+	private JButton btnNewButton;
+	private JButton btnNewButton_2;
 
 	/**
 	 * Create the frame.
@@ -35,12 +36,12 @@ public class JanelaQuatro extends JFrame implements ActionListener{
 		getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Voltar");
+		btnNewButton = new JButton("Voltar");
 		btnNewButton.setBackground(new Color(224, 255, 255));
 		btnNewButton.setBounds(10, 311, 110, 50);
 		getContentPane().add(btnNewButton);
 		
-		JButton btnNewButton_2 = new JButton("Pesquisar");
+		btnNewButton_2 = new JButton("Pesquisar");
 		btnNewButton_2.setBackground(new Color(224, 255, 255));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -57,7 +58,7 @@ public class JanelaQuatro extends JFrame implements ActionListener{
 
 	}
 	@Override
-	public void actionPerfomed(ActionEvent arg0){
+	public void actionPerformed(ActionEvent arg0){
 		if(arg0.getSource()==this.btnNewButton){
 			dispose();
 		}else if (arg0.getSource()==this.btnNewButton_2){

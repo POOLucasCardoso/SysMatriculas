@@ -5,7 +5,6 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
 import java.util.HashMap;
 import java.util.LinkedList;
 
@@ -23,6 +22,7 @@ public class SysPlanilha {
 	public void cadastrarAluno(Aluno aluno) throws AlunoJaCadastradoException, IOException{
 		try {
 			this.pesquisarAlunoPorMatricula(aluno.getMatricula());
+			throw new AlunoJaCadastradoException("Já existe um aluno com essa matrícula cadastrada.");
 		} catch (AlunoNaoCadastradoException e) {
 			this.alunos.put(aluno.getMatricula(), aluno);
 		}
@@ -61,7 +61,7 @@ public class SysPlanilha {
 		this.alunos.remove(matricula);
 	}
 	
-	public void carregarDadosBasicos() throws IOException {
+	public void carregarDadosBasicos() throws IOException{/*
 		BufferedReader leitor = null;
 		String[] dados = null;
 		try {
@@ -74,9 +74,9 @@ public class SysPlanilha {
 				leitor.close();
 			}
 		}
-	}
+	*/}
 	
-	public void salvarDadosBasicos() throws IOException {
+	public void salvarDadosBasicos() throws IOException {/*
 		BufferedWriter gravador = null;
 		String linha = "quantNotas,matriculaCount\n";
 		linha+= Aluno.NUM_NOTAS+","+Aluno.MATRICULA_COUNT;
@@ -89,9 +89,10 @@ public class SysPlanilha {
 				gravador.close();
 			}
 		}
-	}
+	*/}
 	
 	public void carregarAluno(String matricula)  throws AlunoNaoCadastradoException, IOException{
+		throw new AlunoNaoCadastradoException("Não existe nenhum aluno no banco de dados com a matrícula "+matricula);/*
 		BufferedReader leitor = null;
 		String[] dados = null;
 		boolean achado = false;
@@ -120,9 +121,9 @@ public class SysPlanilha {
 				leitor.close();
 			}
 		}
-	}
+	*/}
 	
-	public LinkedList<Aluno> carregarAlunosPorNome(String nome) throws IOException {
+	public LinkedList<Aluno> carregarAlunosPorNome(String nome) throws IOException {return new LinkedList<Aluno>();/*
 		BufferedReader leitor = null;
 		String[] dados = null;
 		LinkedList<Aluno> achados = new LinkedList<Aluno>();
@@ -148,9 +149,9 @@ public class SysPlanilha {
 		}
 		
 		return achados;
-	}
+	*/}
 	
-	public void salvarDados() throws IOException {
+	public void salvarDados() throws IOException {/*
 		BufferedWriter gravador = null;
 		String linha = "matrícula,nome,nascimento,";
 		for(NomesMateria m: NomesMateria.values()) {
@@ -175,5 +176,5 @@ public class SysPlanilha {
 				gravador.close();
 			}
 		}
-	}
+	*/}
 }

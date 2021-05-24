@@ -23,6 +23,7 @@ public class Aluno {
 		this.nome = nome;
 		this.nascimento = nascimento;
 		this.matricula = Aluno.geradorDeMatricula();
+		this.materias = new LinkedList<Materia>();
 		for(NomesMateria m: NomesMateria.values()) {
 			this.materias.add(new Materia(Aluno.NUM_NOTAS, m));
 		}
