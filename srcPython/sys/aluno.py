@@ -1,3 +1,5 @@
+import yaml
+
 MATRICULA_COUNT = 0
 NUMERO_DE_NOTAS = "3"
 
@@ -20,13 +22,25 @@ class Aluno(object):
 		global MATRICULA_COUNT
 		return MATRICULA_COUNT
 	
-	 def __init__(self,nome:str,dataDeNascimento:str):
+	def __init__(self,nome:str, dataDeNascimento:str, materiasDumped = []):
 		self.nome = nome
 		self.dataDeNascimento = dataDeNascimento
 		self.matricula = geradorDeMatricula()
-		self.materias = list()
-		for i in NomesMateria:
-			self.materias.append(Materia(i,self.NUMERO_DE_NOTAS))
+		if len(materiasDumped) == 0:
+			self.materias = list()
+			for i in NomesMateria:
+				self.materias.append(Materia(i,self.NUMERO_DE_NOTAS))
+		else:
+			for i in materiasDumped:
+				materia = Materia(NomesMateria(i["nome"]),self.NUMERO_DE_NOTAS)
+				materia.notas = i["notas"]
+				self.materias.append(materia)
+
+	def cadastrarNota(self, materia:NomesMateria, unidade:int, nota:float):
+		for i in self.materias:
+			if i.nome == materia:
+				i.cadastrarNota(unidade, nota)
+				break
 
 	def dump(self):
 		dumpedMaterias = list()
@@ -38,7 +52,7 @@ class Aluno(object):
 			"matricula":self.matricula,
 			"materias":dumpedMaterias,
 		}
-	
+
 	def __str__(self):
 		return f"Aluno: {self.nome}, matricula: {self.matricula}"
 	

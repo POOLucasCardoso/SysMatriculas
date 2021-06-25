@@ -17,16 +17,16 @@ class Materia(object):
 		#O dicionario anexa índices a valores
 		self.notas = dict()
 		for i in range(1,quantNotas+1,1):
-			self.notas[str(i)] = -1
+			self.notas[i] = None
 
-	def cadastrarNota (self, unidade: str, nota: int):
+	def cadastrarNota (self, unidade: int, nota: float):
 		'''Esse método casdastra uma nota nova dentro da class materia'''
 		self.notas[unidade] = nota
 
 	def cauculaMedia (self):
 		'''Esse método caucula a média na matéria 
 se tiverem todas as notas cadastradas'''
-		if -1 in self.notas.values():
+		if None in self.notas.values():
 			raise ValueError("Quantidade de notas insuficiente para calcular a média.")
 		somaMedia = 0
 		for i in self.notas.values():
