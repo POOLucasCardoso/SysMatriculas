@@ -33,9 +33,3 @@ se tiverem todas as notas cadastradas'''
 			somaMedia += i
 		mediaTotal = somaMedia/len(self.notas.values())
 		return mediaTotal
-
-	def dump(self):
-		return {
-			"nome":self.nome.value,
-			"notas":self.notas,
-		}

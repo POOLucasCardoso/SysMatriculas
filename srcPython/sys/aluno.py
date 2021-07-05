@@ -25,8 +25,8 @@ class Aluno(object):
 		self.nome = nome
 		self.dataDeNascimento = dataDeNascimento
 		self.matricula = geradorDeMatricula()
+		self.materias = list()
 		if len(materiasDumped) == 0:
-			self.materias = list()
 			for i in NomesMateria:
 				self.materias.append(Materia(i,NUMERO_DE_NOTAS))
 		else:
@@ -40,17 +40,6 @@ class Aluno(object):
 			if i.nome == materia:
 				i.cadastrarNota(unidade, nota)
 				break
-
-	def dump(self):
-		dumpedMaterias = list()
-		for i in self.Materias:
-			dumpedMaterias.append(i.dump())
-		return {
-			"nome":self.nome,
-			"dataDeNascimento":self.dataDeNascimento,
-			"matricula":self.matricula,
-			"materias":dumpedMaterias,
-		}
 
 	def __str__(self):
 		return f"Aluno: {self.nome}, matricula: {self.matricula}"

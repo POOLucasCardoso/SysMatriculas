@@ -1,6 +1,6 @@
 from SYS.Aluno import Aluno
 from SYS.Materias import NomesMateria
-import yaml
+import pickle
 from os.path import exists as pathExists
 
 class AlunoJaCadastradoException(Exception):
@@ -13,7 +13,7 @@ class AlunoNaoCadastradoException(Exception):
 
 class SysPlanilha:
 	
-	ARQUIVO_DE_DADOS  = "arquivos.yaml"
+	ARQUIVO_DE_DADOS  = "arquivos.pkl"
 
 	def __init__(self):
 		self.alunos = dict() #{"matricula":Aluno}
@@ -49,21 +49,14 @@ class SysPlanilha:
 		del self.alunos[matricula]
 
 	def salvarDados(self):
-		alunosDumped = list()
-		for i in self.alunos:
-			alunosDumped.append(i.dump())
-		dados = yaml.dump({
-			"quantMatriculas":Aluno.getMatriculaCount(),
-			"alunosList":alunosDumped,
-			})
-		with open(self.ARQUIVO_DE_DADOS,"w") as arquivo:
-			arquivo.write(dados)
+		dados = {
+		 	"quantMatriculas":Aluno.getMatriculaCount(),
+		 	"alunosList":self.alunos,
+		 	}
+		with open(self.ARQUIVO_DE_DADOS,"wb") as arquivo:
+			pickle.dump(dados, arquivo)
 
 	def carregarDados(self):
-		dados = ""
-		with open(self.ARQUIVO_DE_DADOS,"r") as arquivo:
-			dados = arquivo.read()
-		quantMatriculas,alunosDumped = yaml.load(dados)
-		for i in alunosDumped:
-			aluno = Aluno(i["nome"], i["dataDeNascimento"], i["matricula"], i["materias"])
-			self.alunos[aluno.matricula] = aluno
+		with open(self.ARQUIVO_DE_DADOS,"rb") as arquivo:
+			quantMatriculas,self.alunos = pickle.load(arquivo).values()
+		
