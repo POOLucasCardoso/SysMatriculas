@@ -1,6 +1,7 @@
-from Aluno import Aluno
-from Materias import NomesMateria
+from SYS.Aluno import Aluno
+from SYS.Materias import NomesMateria
 import yaml
+from os.path import exists as pathExists
 
 class AlunoJaCadastradoException(Exception):
 	def __init__(self,message):
@@ -16,18 +17,19 @@ class SysPlanilha:
 
 	def __init__(self):
 		self.alunos = dict() #{"matricula":Aluno}
-		self.carregarDados()
+		if pathExists(self.ARQUIVO_DE_DADOS):
+			self.carregarDados()
 
 	def cadastrarAluno(self, aluno:Aluno):
 		try:
-			self.pesquisarAlunoPorMatricula(aluno.matricula):
-			raise AlunoJaCadstradoException(f"Já existe um aluno com a matrícula {aluno.matricula} cadastrada.")
+			self.pesquisarAlunoPorMatricula(aluno.matricula)
+			raise AlunoJaCadastradoException(f"Já existe um aluno com a matrícula {aluno.matricula} cadastrada.")
 		except AlunoNaoCadastradoException:
 			self.alunos[aluno.matricula] = aluno
 
 	def pesquisarAlunoPorMatricula(self, matricula:str):
 		if matricula not in self.alunos.keys():
-			raise AlunoNaoCadstradoException(f"Não existe nenhum aluno no banco de dados com a matrícula {matricula}")
+			raise AlunoNaoCadastradoException(f"Não existe nenhum aluno no banco de dados com a matrícula {matricula}")
 		return self.alunos[matricula]
 
 	def pesquisarAlunoPorNome(self, nome:str):

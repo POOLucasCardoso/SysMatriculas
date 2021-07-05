@@ -1,14 +1,13 @@
 import yaml
+from SYS.Materias import NomesMateria,Materia
 
 MATRICULA_COUNT = 0
-NUMERO_DE_NOTAS = "3"
+NUMERO_DE_NOTAS = 3
 
 def geradorDeMatricula():
 	global MATRICULA_COUNT
 	MATRICULA_COUNT += 1
 	return f'{MATRICULA_COUNT}'.zfill(4)
-
-from Materias import NomesMateria,Materia
 
 class Aluno(object):
 	
@@ -29,10 +28,10 @@ class Aluno(object):
 		if len(materiasDumped) == 0:
 			self.materias = list()
 			for i in NomesMateria:
-				self.materias.append(Materia(i,self.NUMERO_DE_NOTAS))
+				self.materias.append(Materia(i,NUMERO_DE_NOTAS))
 		else:
 			for i in materiasDumped:
-				materia = Materia(NomesMateria(i["nome"]),self.NUMERO_DE_NOTAS)
+				materia = Materia(NomesMateria(i["nome"]),NUMERO_DE_NOTAS)
 				materia.notas = i["notas"]
 				self.materias.append(materia)
 
