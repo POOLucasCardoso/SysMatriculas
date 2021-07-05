@@ -17,7 +17,6 @@ class TestesUnitarios(unittest.TestCase):
                         self.fail(f"Excessão não esperada do tipo '{str(e)}'")
 
         def teste_de_cadastro(self):
-                from SYS.Aluno import MATRICULA_COUNT
                 dados = {
                         "quantMatriculas":0,
                         "alunosList":{},
@@ -29,10 +28,9 @@ class TestesUnitarios(unittest.TestCase):
                 novoAluno = Aluno("joão","05/05/2005")
                 sistema.cadastrarAluno(novoAluno)
                 self.assertEqual(len(sistema.alunos.keys()),1)
-                self.assertEqual(sistema.pesquisarAlunoPorMatricula(str(MATRICULA_COUNT+1).zfill(4)).nome, "joão")
+                self.assertEqual(sistema.pesquisarAlunoPorMatricula("0001").nome, "joão")
 
         def teste_de_cadastro_de_nota(self):
-                from SYS.Aluno import MATRICULA_COUNT
                 dados = {
                         "quantMatriculas":0,
                         "alunosList":{},
@@ -43,16 +41,15 @@ class TestesUnitarios(unittest.TestCase):
                 sistema = SysPlanilha()
                 novoAluno = Aluno("joão","05/05/2005")
                 sistema.cadastrarAluno(novoAluno)
-                sistema.editarNotaDoAluno("0002",NomesMateria.MATEMATICA,1,0)
+                sistema.editarNotaDoAluno("0001",NomesMateria.MATEMATICA,1,0)
                 materia = None
-                for i in sistema.pesquisarAlunoPorMatricula(str(MATRICULA_COUNT+1).zfill(4)).materias:
+                for i in sistema.pesquisarAlunoPorMatricula("0001").materias:
                         if i.nome == NomesMateria.MATEMATICA:
                                 materia = i
                                 break
                 self.assertEqual(materia.notas[1], 0)
 
         def teste_salvando_carregando_arquivos(self):
-                from SYS.Aluno import MATRICULA_COUNT
                 dados = {
                         "quantMatriculas":0,
                         "alunosList":{},
@@ -66,7 +63,7 @@ class TestesUnitarios(unittest.TestCase):
                 sistema.salvarDados()
                 sistema = SysPlanilha()
                 self.assertEqual(len(sistema.alunos.keys()),1)
-                self.assertEqual(sistema.pesquisarAlunoPorMatricula(str(MATRICULA_COUNT+1).zfill(4)).nome, "joão")
+                self.assertEqual(sistema.pesquisarAlunoPorMatricula("0001").nome, "joão")
 
 
 if __name__=="__main__":
