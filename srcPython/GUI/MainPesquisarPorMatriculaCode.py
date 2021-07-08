@@ -34,6 +34,9 @@ class Ui_MainWindow(object):
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
         self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 619, 279))
+
+        self.scrollGridLabels = list()
+
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.botaovoltar = QPushButton(self.centralwidget)
         self.botaovoltar.setObjectName(u"botaovoltar")

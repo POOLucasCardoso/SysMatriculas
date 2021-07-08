@@ -16,7 +16,7 @@ class Materia(object):
 		self.nome = nome
 		#O dicionario anexa índices a valores
 		self.notas = dict()
-		for i in range(1,quantNotas+1,1):
+		for i in range(1,quantNotas+2,1):
 			self.notas[i] = None
 
 	def cadastrarNota (self, unidade: int, nota: float):

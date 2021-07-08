@@ -59,4 +59,5 @@ class SysPlanilha:
 	def carregarDados(self):
 		with open(self.ARQUIVO_DE_DADOS,"rb") as arquivo:
 			quantMatriculas,self.alunos = pickle.load(arquivo).values()
+		Aluno.setMatriculaCount(quantMatriculas)
 		

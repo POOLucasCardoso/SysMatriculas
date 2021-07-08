@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainEditanotaRIkMjX.ui'
+## Form generated from reading UI file 'MainEditanotanMfGCp.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -34,27 +34,8 @@ class Ui_MainWindow(object):
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
         self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 589, 269))
-        self.gridLayout_3 = QGridLayout(self.scrollAreaWidgetContents)
-        self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.label_2 = QLabel(self.scrollAreaWidgetContents)
-        self.label_2.setObjectName(u"label_2")
-
-        self.gridLayout_3.addWidget(self.label_2, 0, 0, 1, 1)
-
-        self.label_3 = QLabel(self.scrollAreaWidgetContents)
-        self.label_3.setObjectName(u"label_3")
-
-        self.gridLayout_3.addWidget(self.label_3, 0, 1, 1, 1)
-
-        self.label_4 = QLabel(self.scrollAreaWidgetContents)
-        self.label_4.setObjectName(u"label_4")
-
-        self.gridLayout_3.addWidget(self.label_4, 1, 0, 1, 1)
-
-        self.label_5 = QLabel(self.scrollAreaWidgetContents)
-        self.label_5.setObjectName(u"label_5")
-
-        self.gridLayout_3.addWidget(self.label_5, 1, 1, 1, 1)
+        
+        self.scrollGridLabels = list() #lista de conteúdos da scroll area
 
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.layoutWidget = QWidget(self.centralwidget)
@@ -96,58 +77,11 @@ class Ui_MainWindow(object):
         self.layoutWidget1 = QWidget(self.centralwidget)
         self.layoutWidget1.setObjectName(u"layoutWidget1")
         self.layoutWidget1.setGeometry(QRect(690, 210, 77, 271))
-        self.gridLayout_2 = QGridLayout(self.layoutWidget1)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.butaook1 = QPushButton(self.layoutWidget1)
-        self.butaook1.setObjectName(u"butaook1")
-
-        self.gridLayout_2.addWidget(self.butaook1, 0, 0, 1, 1)
-
-        self.verticalSpacer = QSpacerItem(20, 18, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_2.addItem(self.verticalSpacer, 1, 0, 1, 1)
-
-        self.butaook2 = QPushButton(self.layoutWidget1)
-        self.butaook2.setObjectName(u"butaook2")
-
-        self.gridLayout_2.addWidget(self.butaook2, 2, 0, 1, 1)
-
-        self.verticalSpacer_2 = QSpacerItem(20, 18, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_2.addItem(self.verticalSpacer_2, 3, 0, 1, 1)
-
-        self.butaook3 = QPushButton(self.layoutWidget1)
-        self.butaook3.setObjectName(u"butaook3")
-
-        self.gridLayout_2.addWidget(self.butaook3, 4, 0, 1, 1)
-
-        self.verticalSpacer_3 = QSpacerItem(20, 18, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_2.addItem(self.verticalSpacer_3, 5, 0, 1, 1)
-
-        self.butaook4 = QPushButton(self.layoutWidget1)
-        self.butaook4.setObjectName(u"butaook4")
-
-        self.gridLayout_2.addWidget(self.butaook4, 6, 0, 1, 1)
-
-        self.verticalSpacer_4 = QSpacerItem(20, 18, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_2.addItem(self.verticalSpacer_4, 7, 0, 1, 1)
-
-        self.butaook5 = QPushButton(self.layoutWidget1)
-        self.butaook5.setObjectName(u"butaook5")
-
-        self.gridLayout_2.addWidget(self.butaook5, 8, 0, 1, 1)
-
-        self.verticalSpacer_5 = QSpacerItem(20, 18, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.gridLayout_2.addItem(self.verticalSpacer_5, 9, 0, 1, 1)
-
-        self.butaook6 = QPushButton(self.layoutWidget1)
-        self.butaook6.setObjectName(u"butaook6")
-
-        self.gridLayout_2.addWidget(self.butaook6, 10, 0, 1, 1)
+        self.okBox = QVBoxLayout(self.layoutWidget1)
+        self.okBox.setObjectName(u"okBox")
+        self.okBox.setContentsMargins(0, 0, 0, 0)
+        
+        self.okBoxButtons = list()
 
         self.layoutWidget2 = QWidget(self.centralwidget)
         self.layoutWidget2.setObjectName(u"layoutWidget2")
@@ -191,17 +125,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Editar nota de aluno", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.butaopesquisar.setText(QCoreApplication.translate("MainWindow", u"Pesquisar", None))
-        self.butaook1.setText(QCoreApplication.translate("MainWindow", u"OK", None))
-        self.butaook2.setText(QCoreApplication.translate("MainWindow", u"OK", None))
-        self.butaook3.setText(QCoreApplication.translate("MainWindow", u"OK", None))
-        self.butaook4.setText(QCoreApplication.translate("MainWindow", u"OK", None))
-        self.butaook5.setText(QCoreApplication.translate("MainWindow", u"OK", None))
-        self.butaook6.setText(QCoreApplication.translate("MainWindow", u"OK", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Voltar", None))
         self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Salvar", None))
     # retranslateUi

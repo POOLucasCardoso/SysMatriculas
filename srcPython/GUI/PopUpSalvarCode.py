@@ -37,6 +37,7 @@ class Ui_Form(QWidget):
 
     def __init__(self):
         super(Ui_Form,self).__init__()
+        self.setupUi(self)
         self.pushButton.clicked.connect(self.close)
 
     def retranslateUi(self, Form):
