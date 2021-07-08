@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MainCadastrarnzYlLK.ui'
+## Form generated from reading UI file 'MainCadastrarvrUjyv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 
 
 class Ui_MainWindow(object):
@@ -29,15 +29,10 @@ class Ui_MainWindow(object):
         self.label.setAlignment(Qt.AlignCenter)
         self.layoutWidget = QWidget(self.centralwidget)
         self.layoutWidget.setObjectName(u"layoutWidget")
-        self.layoutWidget.setGeometry(QRect(30, 123, 761, 227))
+        self.layoutWidget.setGeometry(QRect(30, 123, 761, 253))
         self.gridLayout = QGridLayout(self.layoutWidget)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
-        self.digitadordenascimento = QTextEdit(self.layoutWidget)
-        self.digitadordenascimento.setObjectName(u"digitadordenascimento")
-
-        self.gridLayout.addWidget(self.digitadordenascimento, 2, 2, 1, 1)
-
         self.verticalLayout_2 = QVBoxLayout()
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
@@ -88,16 +83,21 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addLayout(self.verticalLayout, 0, 0, 3, 1)
 
-        self.digitadordenome = QTextEdit(self.layoutWidget)
-        self.digitadordenome.setObjectName(u"digitadordenome")
+        self.digitadodenascimento = QLineEdit(self.layoutWidget)
+        self.digitadodenascimento.setObjectName(u"digitadodenascimento")
 
-        self.gridLayout.addWidget(self.digitadordenome, 1, 2, 1, 1)
+        self.gridLayout.addWidget(self.digitadodenascimento, 2, 2, 1, 1)
 
-        self.digitadordematricula = QTextEdit(self.layoutWidget)
+        self.digitadordematricula = QLineEdit(self.layoutWidget)
         self.digitadordematricula.setObjectName(u"digitadordematricula")
         self.digitadordematricula.setEnabled(False)
 
         self.gridLayout.addWidget(self.digitadordematricula, 0, 2, 1, 1)
+
+        self.digitadordenome = QLineEdit(self.layoutWidget)
+        self.digitadordenome.setObjectName(u"digitadordenome")
+
+        self.gridLayout.addWidget(self.digitadordenome, 1, 2, 1, 1)
 
         self.layoutWidget1 = QWidget(self.centralwidget)
         self.layoutWidget1.setObjectName(u"layoutWidget1")

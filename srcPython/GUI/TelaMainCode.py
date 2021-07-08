@@ -8,9 +8,9 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from PySide2.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 
 
 class Ui_MainWindow(object):
@@ -117,8 +117,8 @@ class Ui_MainWindow(object):
         self.butaoCadastrar.setText(QCoreApplication.translate("MainWindow", u"Cadastrar aluno", None))
         self.butaoPesquisar.setText(QCoreApplication.translate("MainWindow", u"Pesquisar aluno por matr\u00edcula", None))
         self.butaoExcluir.setText(QCoreApplication.translate("MainWindow", u"Excluir aluno", None))
-        self.butaoPesquisarNome.setText(QCoreApplication.translate("MainWindow", u"Pesquisar aluno por nome", None))
-        self.butaoDevedores.setText(QCoreApplication.translate("MainWindow", u"Alunos devedores", None))
+        self.butaoPesquisarNome.setText(QCoreApplication.translate("MainWindow", u"Pesquisar aluno por nome", None))#Disabled
+        self.butaoDevedores.setText(QCoreApplication.translate("MainWindow", u"Alunos devedores", None))#Disabled
         self.butaoEditar.setText(QCoreApplication.translate("MainWindow", u"Editar aluno", None))
     # retranslateUi
 
