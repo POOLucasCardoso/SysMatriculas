@@ -120,7 +120,7 @@ class JanelaEditarNota(QMainWindow,MainEditarNota):
 		clicked = self.sender().objectName()
 		for i in range(1,len(self.scrollGridLabels[NomesMateria[clicked].value-1][1:-1])+1):
 			try:
-				self.aluno.cadastrarNota(NomesMateria[clicked], i, int(self.scrollGridLabels[NomesMateria[clicked].value-1][i].text()))
+				self.aluno.cadastrarNota(NomesMateria[clicked], i, float(self.scrollGridLabels[NomesMateria[clicked].value-1][i].text()))
 			except ValueError as Ve:
 				self.popup = PopUpSalvar()
 				self.popup.show()
